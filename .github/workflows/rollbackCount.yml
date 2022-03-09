@@ -28,4 +28,4 @@ jobs:
     - name: Running Quality Checks
       uses: docker://liquibase/liquibase:4.8.0
       with:
-        args: --changeLogFile=Changelogs/cyclopsbi.xml rollbackCount ${{ numChangesets }}
+        args: --changeLogFile=Changelogs/cyclopsbi.xml rollbackCount ${{ github.event.inputs.numChangesets }}
