@@ -1,4 +1,4 @@
-name: run_changes
+name: rollback_changes
 
 on:
   workflow_dispatch:      
