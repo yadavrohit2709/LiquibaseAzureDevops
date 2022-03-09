@@ -31,3 +31,8 @@ jobs:
       uses: docker://liquibase/liquibase:4.8.0
       with:
         args: --changeLogFile=Changelogs/cyclopsbi.xml status --verbose
+
+    - name: Running Update
+      uses: docker://liquibase/liquibase:4.8.0
+      with:
+        args: --changeLogFile=Changelogs/cyclopsbi.xml update
