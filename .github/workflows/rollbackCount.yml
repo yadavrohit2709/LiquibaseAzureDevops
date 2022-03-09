@@ -2,12 +2,11 @@ name: rollback_changes
 
 on:
   workflow_dispatch:      
-
-inputs:
-  numChangesets:
-    description: 'Number of Changesets to Roll Back'
-    required: false
-    default: '0'
+  inputs:
+    numChangesets:
+      description: 'Number of Changesets to Roll Back'
+      required: false
+      default: '0'
 
 env:
     LIQUIBASE_PRO_LICENSE_KEY: ${{ secrets.LB_PROKEY }}
