@@ -6,19 +6,13 @@ resources:
 trigger:
 - master
 
-variables:
-- group: Liquibase DEV
 
 pool:
   vmImage: ubuntu-latest
 container: LBPRO
 
 steps:
-- script: |
-    git config --global user.email "you@example.com"
-    git config --global user.name "Your Name"
-    git clone https://github.com/yourusername/yourrepository.git
-    cd yourrepository
+- script: |    
     liquibase --version
     liquibase checks run
     liquibase tag $(Build.BuildId)
