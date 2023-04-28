@@ -13,11 +13,12 @@ container: LBPRO
 
 steps:
 - script: |
-    cd $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs
+    #cd $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs
     liquibase --version
+    docker run --rm -v $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs/changelogs:/liquibase/changelogs --defaultsFile=/liquibase/changelog/liquibase.properties update
     #liquibase checks run
     #liquibase tag $(Build.BuildId)
-    liquibase update
+    #liquibase update
     #liquibase history
   displayName: 'Cloning Repository and Running Liquibase Commands'
 
