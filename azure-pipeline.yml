@@ -13,8 +13,10 @@ container: LBPRO
 
 steps:
 - script: |
-    cd $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs
+    #cd $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs
     echo  '$(System.DefaultWorkingDirectory)'
+    pwd # Debug: Print the current working directory
+    find "$(pwd -P)" -name liquibase.properties
     #liquibase --version
     #docker run --rm -v $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs:/liquibase/changelog --defaultsFile=/liquibase/changelog/liquibase.properties update
     #liquibase checks run
