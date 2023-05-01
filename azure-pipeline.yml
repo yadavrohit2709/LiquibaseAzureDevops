@@ -21,7 +21,7 @@ steps:
     #docker run --rm -v $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs:/liquibase/changelog --defaultsFile=/liquibase/changelog/liquibase.properties update
     #liquibase checks run
     #liquibase tag $(Build.BuildId)
-    liquibase --defaultsFile=./liquibase.properties update #--changeLogFile=./dbchangelog.xml
+    liquibase --defaultsFile=./Changelogs/liquibase.properties update #--changeLogFile=./dbchangelog.xml
     #liquibase history
   displayName: 'Cloning Repository and Running Liquibase Commands'
 
