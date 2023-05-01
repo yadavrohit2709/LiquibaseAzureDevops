@@ -17,6 +17,7 @@ steps:
     echo  '$(System.DefaultWorkingDirectory)'
     pwd # Debug: Print the current working directory
     find "$(pwd -P)" -name liquibase.properties
+    find "$(pwd -P)" -name dbchangelog.xml
     #liquibase --version
     #docker run --rm -v $(System.DefaultWorkingDirectory)/LiquibaseAzureDevops/Changelogs:/liquibase/changelog --defaultsFile=/liquibase/changelog/liquibase.properties update
     #liquibase checks run
